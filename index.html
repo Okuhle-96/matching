@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <title>Matching Days</title>
+  </head>
+  <body id="matching_days"></body>
+  <script src="./js/dom.js" charset="utf-8"></script>
+  <script src="./js/factory.js" charset="utf-8"></script>
+  <script type="text/x-template" id="matching_days_template">
+    <div class="header">
+      <h1>MATCHING DAYS</h1>
+      <span class="gray">hghglllkkhhghjk</span>
+      
+    </div>
+
+    
+    
+    <p class="instructions" style="font-family: helvetica; font-weight: bolder;" >Select two dates, the day for date one should be brown, the day for date two should be blue and if the dates are on the same day the matching day should be green. </p>
+<div class="days">
+  {{#each day}}
+    <div class="day" id={{this}}>{{this}}</div>
+  {{/each}}
+</div>
+  
+<div class="dates">
+  {{#each date}}
+
+  <div class={{@key}} id="first-date">
+    <label for={{@key}}>{{this}}</label>
+    <input type="date" id={{@key}} class="first" name={{@key}} />
+  </div>
+  {{/each}}
+</div>
+   
+  </script>
+</html>
